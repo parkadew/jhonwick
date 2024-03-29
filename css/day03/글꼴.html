@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+        font-family: Noto;
+        src: url(./font/NotoSansKR-VariableFont_wght.ttf);
+      }
+
+      /*
+        ttf - IE9버전 부터 부분적 지원, 용량이 큼
+        eot  - IE만 지원 하는 폰트
+        otf  - 운영체제에 직접 다운로드,용량 큼
+        woff - 가장 용량 적고 빠름, 옛 버전의 브라우저 지원 되지않음
+
+        만약에 프로젝트의 특성상 구버전 브라우저를 지원해야한다면
+        당시 폰트가 적용이 안되는 이슈가 있다면 확장자가 지원하고 있는지 고려
+      */
+
+      body {
+        font-family: Noto;
+      }
+
+      /*p요소 중에 class가 align인 요소 선택*/
+      p.align {
+        text-align: justify;
+      }
+
+      p.font {
+        font-size: 32px;
+        font-weight: 700;
+        /*bold = 700*/
+        font-family: "Noto Sans KR", sans-serif;
+        /*
+           (CDN 방식
+            너가 구글 폰트 들어가서 링크를 통해 적용시킨방식이 CDN)
+
+            cdn: <link/>로 외부 파일을 연결
+            용량도 작고 속도도 빠름, 단 서버의 연결 상태에 따라 의존적
+
+            1.cdn 형태를 쓰면 빠른 속도의 페이지 로딩 가능
+            (font를 파일로 전송하지 않기 때문에 용량이 작죠)
+
+            2.중복 다운로드 방지
+            3.브라우저에 저장 가능
+              기존 사용자의 경우 재요청 하지 않아도 됨
+
+
+            @font-face: down load
+            (이미지 넣듯이 FONT파일을 생성후 폰트를 다운받아 적용시키는것)
+            (폰트 다운로드 해서 사용할수있음)
+            폰트 파일의 형식을 서버에 직접 저장할수있기 때문에
+            어떠한 브라우저에서도 지원 가능
+
+
+            보통은 CDN을 사용하는 것이 좋음
+            CDN에서 받는 파일이 용량이 클 경우, 서버가 불안정할 경우 늘릴 수가 있음
+
+            @font-face=>폰트의 종류가 많을 떄, 폰트의 크기가 클때,
+            회사의 폰트를 사용할때 다양한 브라우저의 버전의 호환성을 지켜야할때
+
+
+
+            //font-display라는 속성과 연관
+            //swap 현상(기존에 있던 폰트에서)
+
+            font-display: swap (fout)
+            기본값, 대체 폰트 ->폰트
+
+            font-display: block (foit)
+            보여주지 않다가, 폰트가 다운로드가 완료되면 ->
+
+            foit
+            웹 폰트를 블러오는 과정에서
+            폰트를 불러오는 웹 브라우저가 텍스트를 보여주지 않는 현상
+            //텍스트의 노출이 중요하지 않을 떄
+
+            fout
+            반대로 웹 폰트를 불러오는 과정에서
+            폰트를 불러오는 동안 대체 폰트를 보여주는 현상
+            // 텍스트를 사용자가 빨리 보는 것이 중요할 때
+
+        */
+      }
+
+      #overflow {
+        width: 300px;
+        height: 100px;
+        overflow: hidden;
+        /*<->visible (default value)*/
+        text-overflow: ellipsis;
+        /*<->clip (default value)*/
+        /*...반드시 overflow 히든이어야하고,*/
+        white-space: nowrap;
+      }
+
+      /*mdn의 css를 읽어보자!
+      FONT
+      COLORS
+      BACKGROUNDS
+      BOX MODEL 
+      IMAGES
+      DISPLAY
+      -----
+      POSITIONED LAYOUT
+      *GRID
+      *FLEXIBLE BOX LAYOUT
+
+      */
+    </style>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <body>
+    <p class="align">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, sit
+      deserunt odit, reiciendis pariatur voluptas quaerat voluptatibus placeat,
+      tenetur modi dolorem sunt quam debitis! Quibusdam consectetur eaque quo
+      nobis. Beatae.
+    </p>
+    <p class="font">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae
+      recusandae porro fugiat quis nihil repellat laboriosam harum eum!
+      Inventore ipsa sit odit laboriosam sunt aspernatur ducimus. Deserunt,
+      porro odio.
+    </p>
+    <hr />
+    <!---p와 div는 처음부터 끝까지 가로길이를 차지
+        높이는? 안에 있는 내용물 만큼 길어집니다.
+        따라서 P태그를 넘는 텍스트가 있을수없다
+
+        만약 P 태그에 크기를 준다면?
+        글자가 P태그를 넘어서 표기된다.
+    
+    -->
+
+    <p id="overflow">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
+      architecto incidunt atque ullam alias odio explicabo, eaque tempore, harum
+      ratione quo sunt illo nisi voluptatibus. Error maiores impedit cumque
+      ducimus.
+    </p>
+  </body>
+</html>

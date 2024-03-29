@@ -1,0 +1,31 @@
+(최초 - 커밋)
+1. 로컬 저장소 생성 - (코드를 내로컬 저장소로 저장)  {git init}
+2. 개발 -> 로컬 저장소 저장  (git add, git commit)
+3. 원격 저장소 생성 (new repository)(깃허브에서)
+4. 원격 저장소 로컬 저장소 연결 (git remote add)
+5. 로컬 저장소에 있는 코드를 원격 저장소에 저장 (git push)
+
+(최초 - 커밋 이후, 혼자)
+1. 로컬 저장소가 생성된 폴더에서 개발
+2. 로컬 저장소에 저장 -> 원격 저장소 저장 (add, commit, push)
+
+
+(최초,커밋 이후 팀)
+1. 팀원은 생성된 레포지토리를 클론해야합니다. (git clone)
+2. 팀원은 각자 분배받은 테스크(업무)에 따라 분기 생성 (git brnach, git checkout -b)
+3. 개발 -> 로컬 저장소 생성 -> 원격 저장소 저장(분기) (add, commit, push dev(x) feat/ooo)
+4. 원격 저장소에서 분기가 생성되었던 원래 분기에 합병 요청 (github - pull request)
+5. 코드 리뷰, 발견하지 못했던 예외 상황, 팀원 간 코드 맥락의 공유
+6. 승인이 되거나 수정 요청 -> 수정 -> 합병 
+7. 합병 시 충돌 발생 (팀원이 동일한 부분을 수정) -> 해결 
+8. 원격 저장소 웹 사이트에서 해결, 코드 편집툴에 들어가서 직접 수정 
+9. 합병 해야하는 브랜치(main)와 내가 개발을 진행한 브랜치 (feat/ooo)를 병합 해야하는데,
+   현재가 내가 가진 main 브랜치가 가장 최신의 것이 아니라면 동기화 (
+    feat/ooo -> git checkout main -> git pull origin main
+    git checkout feat/ooo -> git merge main ->)
+    
+10. 합병 명령어를 통해 코드 편집툴에서 합병 후 원격저장소에 저장 
+    (git add -> git merge --continue -> git push origin feat/ooo)
+
+
+

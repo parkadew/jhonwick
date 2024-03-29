@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*header*/
+
+#main-header{
+    height: 60px;
+    background-color: brown;
+}
+
+/*banner*/
+#main-banner-wrapper {
+    height: 360px;
+    background-color: blanchedalmond;
+    
+
+}
+ 
+#main-banner-container {
+    margin: 0 auto;
+    width: 1080px;
+    height: 100%;
+    background-color: rgb(68, 142, 68);
+    display: flex;
+    overflow: hidden;
+}
+
+
+#main-banner-container > .main-banner-list {
+    flex-basis: 1080px;
+    /* width: 1080px; */
+    height: 100%;
+    background-color: rgb(163, 106, 32);
+    flex-shrink: 0;
+    /*
+        dispalt flex는 자식요소가 부모요소의 크기를 넘을수는 없짐나 
+         shrink 속성을 이용하여 축소 비율을 0으로 만들어 부모 요소 크기를 넘길수있음 */
+}
+
+#main-container{
+    display: flex;
+    /* height: 100vh; */
+}
+#main-container > aside {
+    flex-basis: 320px;
+    /*flex-grow : 3;*/
+    /*
+        flex-grow는 무보 요소가 flex 일때 
+        자식요소의 grow의 합을 구한 후 
+        비율에 맞게 크기를 분산합니다.
+        
+        만약 합이 1이라면 전체 부모요소의 크기를 차지
+
+        => grow 합에 대한 비율
+    */
+    background-color: blue;
+}
+#main-container > section {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: coral;
+    justify-content: center;
+}
+#main-container > section > .main-product-item {
+    flex-basis: 330px;/*단배열을 수정*/
+    flex-basis: 30%;/*요소를 같이 줄일 수도 있음*/
+    height: 260px;
+    background-color: blueviolet;
+}
+ 
+footer {
+    height: 180px;
+    background-color: aquamarine;
+}

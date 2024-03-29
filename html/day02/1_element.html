@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>안녕하세요</div>
+    <h1>안녕</h1>
+    <h6>dkssdh</h6>
+
+    하이다  반갑습니다
+    <!--- div 마땅히 줄 태그가 없을 때, 하나의 구역, 하나의 줄을 모두 차지 (내용물 만큼 그 자리를 차지함)---->
+    <span>반</span>
+    <span>갑</span>
+    <span>습</span>
+    <span>니</span>
+    <span>다</span>
+    <!----span : 특정 구간은 분간, 안에있는 내용 만큼만 크기를 차지 -->
+    <p>저의 이름은 <span>박관형</span>입니다</p>
+    <!--- p : 하나의 문장을 담을 때, 하나의 줄을 모두 차지, *단 위아래 여백 -->
+    <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menuitem-->
+
+
+    <h1>만나서</h1>
+    <h6>반갑습니다</h6>
+    <!--h1~6 : 제목, 숫자가 커질수록 위아래 여백, (제목,타이틀 사용할 때 자주 사용) 크기 등이 작아진다. 한 줄 차지-->
+
+
+    <div>
+        QT
+        <p>gkdlek</p>
+    </div>
+
+
+    <p>
+        안녕
+        <div>ㄲㅈ</div>
+    </p>
+
+</body>
+    <!----sign up login container start ----->
+    <!----p태그 안에 div tag를 넣어서는 안된다 
+
+        (뇌피셜: div 태그안에 p 태그는 부모 자식 관계로 영향을 받지만 
+        그반대의 경우 서로의 영향을 받지 않고 단일 태그로 분리된다. ----->
+
+    <!---div 안에 P태그는 넣을수있음-->
+    <div id=" login-container">
+        <!--- 속성명=속성값 -->
+        이메일: <input type="text" placeholder="이메일을 입력해 주세요"/>
+        <!-- input : 입력을 나타내는 요소, 입력의 종류가 굉장히 포괄적
+                     보통은 form 요소와 함께 쓰이지만, 다음 주에 진행 예정
+
+                     type에 따라 다양한 입력 요소를 구현할 수 있음 
+                     가장 많이 사용하는것은 text이며 default value(기본값)
+
+                     내용물이 필요없는 단일 태그 
+            
+        --->
+        <br/> <!--줄바꿈-->
+        비밀번호: <input type="password">
+        <div>
+            좋아하는 색상: <input type="color">
+        </div>
+        <input type="button" value="회원가입">
+        <button>회원가입</button>  
+        <!----hobby-->      
+        <div>
+           취미:
+           <select>
+                 <option value="0">코딩</option>
+                 <option value="1">자전거</option>
+                 <option value="2">풋살</option>
+
+           </select>
+        <!---gender-->
+        <div>
+            성별:
+            <input type="radio" name="gender" value="0" id="female" /> 
+            <label for="female">여성</label>
+            <!--label은 for 속성의 갑과 같은 id 값을 가진 요소를 연결할 수 있음-->
+
+
+            <input type="radio" name="gender" value="1" /> 남성
+            <input type="radio" name="gender" value="2" /> 비공개
+            <!---radio는 같은 name을 가진 그룹 중에서 하나만 선택 (라디오의 버튼을 생각해보자 on/off만 할수이따)-->
+            <div>
+
+
+
+                <!--family-->
+                가족관계 :
+                <input type="checkbox" />본인
+                <input type="checkbox" />부모
+                <input type="checkbox" />형제
+                <input type="checkbox" />자매
+                <!---checkbox는 다중 선택, Javascript를 이용해서 갯수 제한--->
+            </div>
+
+
+        </div>
+
+
+
+        </div>
+
+    </div>
+    <!----login container end  ----->
+
+
+</html>

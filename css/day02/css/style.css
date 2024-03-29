@@ -1,0 +1,42 @@
+ul {
+  list-style: none;
+}
+
+ul a {
+  text-decoration: none;
+  /*
+  33, 35, 39
+  */
+}
+
+/* a 태그 전체를 아우르기 떄문에 ul의 
+자식 a태그 전체 자식,자손 까지 영행를 받는다*/
+
+ul > a {
+  color: deeppink;
+  /*
+    33,
+    */
+}
+/* 자식 선택자 > 를 사용함으로 자식만 선택되고 
+자손들에게 영행이 가진 않는다*/
+
+ul > li > a {
+  color: cornflowerblue;
+}
+
+ul > li > p > a {
+  color: darkviolet;
+}
+
+ul li a {
+  color: red;
+}
+
+/*
+길이가 같으면 나중에 나온 애 선택 
+
+자식 자손 선택자의 길이가 길 수록 우선 순위가 높다
+*/
+
+/*header*/
