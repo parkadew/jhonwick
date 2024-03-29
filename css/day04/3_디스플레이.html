@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--
+        디스플레이.ㅊ
+
+        block
+           - 한줄을 모두 차지하고 있는 속성
+           - 크기를 지정할 수 있음
+           (p, div, h1~h6 ... )
+
+        inline
+            - 안에 있는 요소 만큼 크기가 지정되며, 한줄을 모두 차지하지 않아
+            이어지는 요소가 이웃하여 배치
+
+            -크기를 지정할 수 없음
+            (a, span, input ...)
+            
+        inline-block
+            -block, inline의 속성을 모두 갖고 있는 display속성
+            -inline 처럼 나란히 배치 되면서, 크기를 조정할 수 있음
+            -블록요소의 세로 정렬을 위해서 사용되는 경우도 많음
+
+
+        none
+            - 안 보여주는거, 화면에서 사라짐
+            - SCRIPT를 통해 화면에서 다시 노출시킬 수 있음
+
+
+        ++@ flex, grid(다음주)
+    -->
+  </head>
+
+  <style>
+    span {
+      width: 48px;
+      height: 48px;
+      background-color: aqua;
+      display: block;
+      /*크기 조절 가능*/
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul > li {
+      display: inline-block;
+      /*수평 정렬 가능, 크기 조절 가능*/
+    }
+    div {
+      width: 500px;
+      height: 300px;
+      border: 1px solid #000;
+      margin: 16px;
+    }
+    /* 아예 자리를 차지하지 않고 사라짐*/
+    .none > p {
+      display: none;
+    }
+    .none:hover > p {
+      display: block;
+    }
+
+    /*자리는 차지하지만, 화면에 (존재하지않음) 보이지 않는 상태
+    숨겨져 있을시 클릭,기능을 하지 못함*/
+    .hidden > p {
+      visibility: hidden;
+    }
+
+    .hidden:hover > p {
+      visibility: visible;
+    }
+    /* 화면에 존재함 사라진 상태가 아니라 투명해진 상태이기 때문에
+    안보여도 기능이 됨 보이지만 않음*/
+    .opacity > p {
+      opacity: 0;
+    }
+    .opacity:hover > p {
+      opacity: 1;
+    }
+  </style>
+
+  <body>
+    <span>엿</span>
+    <span>쌍</span>
+
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <!----->
+    </ul>
+
+    <hr />
+
+    <div class="none">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla vero autem
+      veniam molestiae pariatur? Eveniet ullam qui,
+      <p>explicabo vero assumenda, cum sed officiis debitis amet</p>
+      consequatur dolore facilis mollitia voluptate.
+    </div>
+    <div class="hidden">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae
+      assumenda rem animi,
+      <p>
+        rerum maiores velit at nobis cumque, facere mollitia odit veniam enim
+        harum excepturi
+      </p>
+      voluptatibus? Quae, quam nulla!
+    </div>
+    <div class="opacity">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim error
+      assumenda eum eos optio
+      <p>
+        saepe quo! Labore repellat accusamus quo vero recusandae, molestias
+        inventore
+      </p>
+      perspiciatis sapiente minima porro numquam est?
+    </div>
+  </body>
+</html>

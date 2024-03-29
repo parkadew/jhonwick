@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../day04/css/reset.css">
+    <style>
+        body{
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         /* ( direction colums정렬을 세로로 가져와줄떄 사용) */
+
+        
+
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            transition: transform 1s;
+        }
+
+
+        #scale:hover{
+            border: 1px dashed darkblue;
+            transform: scale(1.5); /*기존 요소보다 1.5커진다*/
+            /* sale -> 강조효과,전방향으로 일정하게 크기를 키워줄때 사용 */
+            transform: scale(-1);
+            /* scale (-1) 좌우 상하 반전 */
+            transform: scalex(-1);
+            /* 좌우반전 */
+            transform: scaley(-1);
+            /* 상하반전 */
+
+            /*(flip)플립 효과 만들때 자주 사용 xy축 */
+        }
+
+        #translate:hover {
+            transform: translate(300px, 200px);
+            /*x,y를 모두 주면 대각선 이동,*/
+            transform: translatex(10%);
+            /*자기 요소 크기의 비율로 이동이 가능*/
+        }
+        #rotate:hover {
+            /* transform: rotate(90deg); */
+            transform: rotateY(180deg);
+            transform: perspective(40px) rotatey(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="scale">whkdn</div>
+    <div id="translate"></div>
+    <div id="rotate"></div>
+    
+</body>
+</html>

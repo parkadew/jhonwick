@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--------
+        color 
+
+        CSS color를 표기하는 방법은 크게 3가지 
+        1. 색상 이름
+            red, black, white...
+
+        2.RGB 값
+            (0~255)
+            RGB (255,0,0) - 빨간색
+            RGB (0,0,0)- 검정색
+            RGB (255,255,255)- 하얀색
+
+            rgba(0~255, 0~255, 0~255, 0~1)
+                            --------투명도
+
+
+            ex)
+                p {
+                    color:rgb(255, 0, 0)
+                }
+        크기
+
+        3. 16진수 
+                (00~ff)
+                "#6자리"
+                    red green blue 
+            color: #00 / 00 / 00 / 00
+            color: #ff0000
+
+            주의사항
+                단순한 검정색에 투명도 - rgba
+                그러나 16진수의 투명도 - 16진수 끝에 추가로 값을 더함
+       ------------------------------------------------------------------------
+
+
+        크기  
+                px
+                    절대크기 
+                    가장 많이 쓰이는 크기 단위
+                    "300px"
+
+                    모바일이나 사용자 화면 크기에 따라 동적으로 변환해야하는 경우
+                    대응이 어렵습니다.
+
+
+                %
+                   상위요소(부모) 기준 비율 
+                   (30%, 부모 요소 크기의 30%인 것)
+                    *30% 차지
+
+                    데스크탑: 부묘요소의 크기가 500px -> 30% = 150 px
+                    모바일: 부모 요소의 크기를 300px -> 30% = 90px 
+                    
+                    부모 요소가 바뀌었기 때문에 알아서 바뀜
+                    디자이너가 어느 정도로 바뀔지 정해줌
+
+                    무조건 30%이기 떄문에 조심 
+                    css가 오류가 날수도 있음
+
+                rem 
+                    DOM의 최상위 요소/태그!! html
+
+                    DOM 요소의 *최상위 요소인 html의* font-size의 배율
+                    1rem = x1
+                    2rem = x2
+                    0.5rem = x0.5
+
+                    ex)
+                        html{ 
+                            font-size: 16px
+                            //html font-size = 16px
+                            //그러나 사용자가 임의로 변경할수있다
+
+                        }
+
+                        div {
+                            width:2rem // 32p 
+                        }
+                        { 본래 html에 주어진 폰트 사이즈 16px에 width값 2rem을 통해 
+                         폰트 사이즈 두배 32px}
+                         { 장점: 모바일이나 태블릿에 들어갔을때 html의 폰트 사이즈만 바꿔주면 
+                         rem사이즈가 전부 다 바뀜} 
+                         
+                        * 반응형에 굉장히 유연하게 대처할 수 있다.
+                         ?(픽셀이나 rem둘중 하나를 골라서 작성해야한다)\
+
+                         rem 모바일과 웹 화면 동일할때 
+                         px 모바일과 웹 화면이 많이 다를때 
+
+
+                em
+                    바로 *부모 요소의 font-size의 배율
+
+                    <html>   // font-size : 18px
+                    <parent> // font-size: 32px
+                        <children> // font-size: 2em = 64px (32x2)
+                                   // font- size : 2rem = 36px (18x2)
+                        </children 
+                    </parent>
+
+                    모든 요소가 최상위 요소인 html에 의존적이 rem과 달리 
+                    개별적인 부모 요소에 의존하므로 보다 유연하게 대처
+
+                    => rem 은 html 변경되면 다 바뀜, 그러나 em은 부모요소에 따라 변경 
+                
+
+
+                vw, vh
+                (dvw, dvh, svw, svh, lvw, lvh )
+
+            
+
+
+                rem
+                em 
+                vw, vh
+                 (dvw, dvh, svw, svh, lvw, lvh) 
+                calc
+
+                v(viewport)
+                현재 사용자가 보고있는 화면의 크기
+                사용자가 데스크탑 -> 데스크탑의 *해상도에 맞는 크기
+                사용자가 테블릿 -> 태블리 해상도에 맞는 크기 
+
+                사용자가 보고있는 화면의 비율 
+                30vh   세로로 사용자가 보고있는 30%
+                (1080px 이라면 30vh라면 나누기 3)
+                100vh->스크롤이 없이100% 가득 채워짐
+                (사용자가 지금 보고있는 화면의 높이에 가득참)
+
+                100vw->가로로 가득 채워진다
+                (스크롤 크기를 계산 하지않음 )\
+                (보통 100vw는 스크롤이 없는 화면을 가득 채우기 위해 사용되어지지만
+                잘 안쓰기도 한다.이미 block 요소(div,p)들은 width 100%)
+                (div,p처럼 가로를 가득 채우는 요소)
+                
+
+                dvh (dynamic)
+                --------모바일화면에서 주소 표시줄이나 브라우저에 따라 
+                        100vh가 달라질 수 있음
+
+                        주소 표시줄 표시 여부에 따라 단위가 변경
+                svh(주소 표시줄 안보일 때 높이)small
+                lvh(주소 표시줄 보일때의 높이)large 
+
+                -> 모바일 화면에서의 100vh가 짤림 현상이 일어났을때 대처 방안
+                
+                calc
+                    계산 기능 
+                    height: calc(100vh - 80px)
+                    *띄어쓰기 꼭 지켜야함
+                
+
+
+        
+
+
+
+
+        -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!---100vw로 인한 가로 스크롤 생성!-->
+    <div style="width: 100vw; height: 300vh; font-size: 16px">
+      <p id="px">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero iure
+        atque, quibusdam blanditiis quasi mollitia commodi voluptates obcaecati
+        magni dolor deleniti ratione rem suscipit ea sequi reiciendis aliquam
+        itaque dignissimos?
+      </p>
+      <hr />
+      <p id="rem">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero iure
+        atque, quibusdam blanditiis quasi mollitia commodi voluptates obcaecati
+        magni dolor deleniti ratione rem suscipit ea sequi reiciendis aliquam
+        itaque dignissimos?
+      </p>
+      <hr />
+      <p id="em">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero iure
+        atque, quibusdam blanditiis quasi mollitia commodi voluptates obcaecati
+        magni dolor deleniti ratione rem suscipit ea sequi reiciendis aliquam
+        itaque dignissimos?
+      </p>
+    </div>
+  </body>
+</html>

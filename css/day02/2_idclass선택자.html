@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!---------
+            태그 선택자
+            html 파일 안에 지정한 모든 요소 선택
+            ex)
+                p(요소명) {
+                    ...
+                  }
+                div {
+                    ...
+                }  
+
+        id, class 선택자
+                1. (id = # 을 넣는다(한개))
+                2.(class = .을 넣는다(여러개))
+
+                html 파일 안의 특정 고유id 혹은 class 속성을 지닌 요소를 선택
+                ex)
+                    #menu-item(#아이디명) {
+                        ...CSS  
+                    }
+
+                    .menu-list (.클래스명) {
+                        ...css문법
+                    }
+
+                단, class는 한 요소에 중복 부여가 가능하다.
+
+        ---->
+    <style>
+      #header {
+        height: 48px;
+        background-color: yellow;
+      }
+
+      .header-menu {
+        display: flex;
+        justify-content: space-between;
+      }
+      /*dispaly flex가 header-menu안에 속성들을 가로로 만들어주는구나
+     만약 div로 사용했다면 세로로 나왔을 텍스트들이다*/
+
+      .header-menu-item {
+        background-color: red;
+      }
+
+      .menu-active {
+        color: azure;
+      }
+
+      /*중복된 class에서는 나중에 나온 것이 기존에 있던 것을 덮어 씌웁니다*/
+      /*중복된 classs는 여러 css 속성을 부여하기 위함 뿐 아니라 동적으로 class 추가*/
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <menu class="header-menu">
+        <div class="header-menu-item menu-active">
+          아침
+          <a href="">
+            <div></div>
+          </a>
+        </div>
+        <div class="header-menu-item">점심</div>
+        <div class="header-menu-item">저녁</div>
+      </menu>
+
+      <menu class="header-menu">
+        <div class="header-menu-item">아침</div>
+        <div class="header-menu-item">점심</div>
+        <div class="header-menu-item">저녁</div>
+      </menu>
+
+      <!----class 속성은 여러 요소를 선택하여 중복된 CSS를 하나로 묶을때
+                class = w-300 flex-between font-red -- 공통되는 css재사용 (어디에서나)
+
+                어떤 특정한 css속성을 부여할 때 사용
+                header-menu-item은 모두 이러한 css를 가지고 있어야 한다(특정 그룹)
+
+                재사용의 여부는 디자이너와 협업하는 것이 굉장히 중요합니다
+                개발자가 아무런 소통을 하지 않는다면 힘든것은 개발자(최종 생산자)
+        -->
+
+      <nav></nav>
+    </div>
+    <div id="main"></div>
+    <div id="footer"></div>
+  </body>
+</html>

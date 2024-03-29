@@ -1,0 +1,49 @@
+
+flex
+    ->display:flex(부모)
+    -> justify - contents (수평정렬방식)
+    -> align-items (수직정렬방식)
+    -> gap(여백,부모한테 부여 자식들이 동일한 값을 가짐)
+    -> flex-wrap (요소가 부모를 넘겼을떄 )(줄바꿈)
+        -->display flex 는 자식요소가 부모요소를 넘을수는 있지만 기본값으로 넘지못하게 함
+    
+    -> flex-grow, flex-shrink, flex-basis (자식)
+
+
+grid
+    -> column, row
+    -> 유연하게 요소를 배치
+
+--------------------------------------------------
+
+트랜지션, 트랜스폼, 에니메이션
+
+
+transition(전환)
+    전환하는 과정을 사용자에게 보여줄 것인가
+    대상, 지속 시간  
+
+
+    ex)
+    상단 메뉴가 0px에서 300px으로 바뀔때 
+    높이가 커지는 괒어을 사영자에게 보여줄지에 대한 여부
+    만약 트렌지션이 없다면 ,한번에 크기가 증가
+
+    투명 opaxity효과를 이요하여 서서히 나타나거나 
+    사라지게 하는 용도로 사용가능
+
+    transition: all(height ,width) 2s           ease
+                ----               -----        -----
+                property           duration     timing-function
+
+    timing-funxtion
+        ease (점점 느리게)
+        linerar (균등하게)
+        ease-in (점점 빠르게)
+        ease-out (빠르다가 느리게)
+        ease-in-out(빠르게 느리게 빠르게)
+        step-start (시간초가 지나기전에)
+        step-end (시간초가 끝나고나서)
+
+
+
